@@ -113,7 +113,12 @@ int main() {
                 printf("Нет треков в плейлисте\n");
             }
             break;
-        
+        case 8:
+            return 0;
+        default:
+            printf("Ошибка выбора действия\n");
+        }
+        printf("\n\n");
         }
     }
 	return 0;
