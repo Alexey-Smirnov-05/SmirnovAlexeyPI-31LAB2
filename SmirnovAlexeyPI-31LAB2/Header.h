@@ -95,3 +95,12 @@ void previous_song(Previous* previous) {
     Playback playback = { previous->playlist, previous->playlist->current_track };
     play_song(&playback);
 }
+
+// Функция для просмотра всех треков в плейлисте
+void view_songs(View* view) {
+    setlocale(LC_ALL, "RUS");
+    printf("Треки в плейлисте:\n");
+    for (int i = 0; i < view->playlist->total_number_of_tracks; i++) {
+        printf("%d. %s\n", i + 1, view->playlist->tracks[i].title);
+    }
+}
