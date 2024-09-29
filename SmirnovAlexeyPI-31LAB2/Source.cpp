@@ -119,7 +119,6 @@ int main() {
             printf("Ошибка выбора действия\n");
         }
         printf("\n\n");
-        }
     }
 	return 0;
 }
