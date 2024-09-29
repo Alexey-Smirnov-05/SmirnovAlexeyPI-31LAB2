@@ -103,6 +103,17 @@ int main() {
             }
             break;
         }
+        case 7:
+            if (playlist.total_number_of_tracks > 0) {
+                View view;
+                view.playlist = &playlist;
+                view_songs(&view);
+            }
+            else {
+                printf("Нет треков в плейлисте\n");
+            }
+            break;
+        
         }
     }
 	return 0;
