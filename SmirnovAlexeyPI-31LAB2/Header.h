@@ -104,3 +104,14 @@ void view_songs(View* view) {
         printf("%d. %s\n", i + 1, view->playlist->tracks[i].title);
     }
 }
+
+// Функция для изменения громкости
+void change_volume(Volume* volume, int new_volume) {
+    if (new_volume >= 0 && new_volume <= 100) {
+        volume->volume = new_volume;
+        printf("Громкость изменена на %d%%\n", volume->volume);
+    }
+    else {
+        printf("Неверный диапазон громкости\n");
+    }
+}
