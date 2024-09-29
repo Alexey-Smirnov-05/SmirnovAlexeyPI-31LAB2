@@ -39,7 +39,13 @@ int main() {
             save_tracks_to_file(&playlist, "playlist.txt");
             break;
         }
-
+        case 1: {
+            int new_volume;
+            printf("¬ведите громкость (0-100): ");
+            scanf("%d", &new_volume);
+            change_volume(&volume, new_volume);
+            break;
+        }
         }
     }
 	return 0;
