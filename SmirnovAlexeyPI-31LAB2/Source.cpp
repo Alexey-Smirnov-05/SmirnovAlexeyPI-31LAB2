@@ -27,7 +27,20 @@ int main() {
         printf("Действие: ");
         scanf("%d", &choice);
 
+        switch (choice) {
+        case 0: {
+            Track song;
+            printf("Введите название трека: ");
+            int c;
+            while ((c = getchar()) != '\n' && c != EOF);
+            fgets(song.title, sizeof(song.title), stdin);
+            song.title[strcspn(song.title, "\n")] = 0;
+            add_song(&playlist, song);
+            save_tracks_to_file(&playlist, "playlist.txt");
+            break;
+        }
 
+        }
     }
 	return 0;
 }
