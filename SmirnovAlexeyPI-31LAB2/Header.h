@@ -63,3 +63,15 @@ void remove_song(Playlist* playlist, int index) {
     playlist->total_number_of_tracks--;
     playlist->tracks = (Track*)realloc(playlist->tracks, playlist->total_number_of_tracks * sizeof(Track));
 }
+
+// Функция для воспроизведения трека
+void play_song(Playback* playback) {
+    setlocale(LC_ALL, "RUS");
+    printf("Сейчас играет: %s\n", playback->playlist->tracks[playback->index].title);
+}
+
+// Функция для паузы трека
+void pause_song(Pause* pause) {
+    setlocale(LC_ALL, "RUS");
+    printf("На паузе\n");
+}
