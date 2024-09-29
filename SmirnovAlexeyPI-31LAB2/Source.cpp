@@ -46,6 +46,16 @@ int main() {
             change_volume(&volume, new_volume);
             break;
         }
+        case 2:
+            if (playlist.total_number_of_tracks > 0) {
+                Playback playback = { &playlist, playlist.current_track };
+                play_song(&playback);
+            }
+            else {
+                printf("Нет треков в плейлисте\n");
+            }
+            break;
+
         }
     }
 	return 0;
