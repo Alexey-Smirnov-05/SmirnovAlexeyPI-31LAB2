@@ -85,6 +85,24 @@ int main() {
                 printf("Нет треков в плейлисте\n");
             }
             break;
+        case 6: {
+            if (playlist.total_number_of_tracks > 0) {
+                int index;
+                printf("Введите индекс трека для удаления: ");
+                scanf("%d", &index);
+                if (index >= 1 && index <= playlist.total_number_of_tracks) {
+                    remove_song(&playlist, index - 1);
+                    save_tracks_to_file(&playlist, "playlist.txt"); // Сохраняем изменения в файле
+                }
+                else {
+                    printf("Неверный индекс\n");
+                }
+            }
+            else {
+                printf("Нет треков в плейлисте\n");
+            }
+            break;
+        }
         }
     }
 	return 0;
