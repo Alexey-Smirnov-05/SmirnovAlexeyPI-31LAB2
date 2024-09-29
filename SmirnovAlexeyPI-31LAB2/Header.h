@@ -47,3 +47,10 @@ typedef struct {
 typedef struct {
     Playlist* playlist;
 } View;
+
+// Функция для добавления трека в плейлист
+void add_song(Playlist* playlist, Track song) {
+    playlist->tracks = (Track*)realloc(playlist->tracks, (playlist->total_number_of_tracks + 1) * sizeof(Track));
+    playlist->tracks[playlist->total_number_of_tracks] = song;
+    playlist->total_number_of_tracks++;
+}
