@@ -130,3 +130,23 @@ void save_tracks_to_file(Playlist* playlist, const char* filename) {
 
     fclose(file);
 }
+
+// Функция для загрузки треков из файла
+void load_tracks_from_file(Playlist* playlist, const char* filename) {
+    FILE* file = fopen(filename, "r");
+    if (file == NULL) {
+        return;
+    }
+
+    char line[100];
+    int i = 0;
+    while (fgets(line, sizeof(line), file)) {
+        line[strcspn(line, "\n")] = 0;
+        Track song;
+        strcpy(song.title, line);
+        add_song(playlist, song);
+        i++;
+    }
+
+    fclose(file);
+}
