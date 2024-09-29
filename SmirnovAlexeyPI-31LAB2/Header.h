@@ -75,3 +75,23 @@ void pause_song(Pause* pause) {
     setlocale(LC_ALL, "RUS");
     printf("На паузе\n");
 }
+
+// Функция для перехода к следующему треку
+void skip_song(Skip* skip) {
+    skip->playlist->current_track++;
+    if (skip->playlist->current_track >= skip->playlist->total_number_of_tracks) {
+        skip->playlist->current_track = 0;
+    }
+    Playback playback = { skip->playlist, skip->playlist->current_track };
+    play_song(&playback);
+}
+
+// Функция для возврата на предыдущий трек
+void previous_song(Previous* previous) {
+    previous->playlist->current_track--;
+    if (previous->playlist->current_track < 0) {
+        previous->playlist->current_track = previous->playlist->total_number_of_tracks - 1;
+    }
+    Playback playback = { previous->playlist, previous->playlist->current_track };
+    play_song(&playback);
+}
