@@ -65,6 +65,16 @@ int main() {
                 printf("Нет треков в плейлисте\n");
             }
             break;
+        case 4:
+            if (playlist.total_number_of_tracks > 0) {
+                Skip skip;
+                skip.playlist = &playlist;
+                skip_song(&skip);
+            }
+            else {
+                printf("Нет треков в плейлисте\n");
+            }
+            break;
         }
     }
 	return 0;
