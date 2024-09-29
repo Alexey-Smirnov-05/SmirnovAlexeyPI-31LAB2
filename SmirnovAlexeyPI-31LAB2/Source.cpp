@@ -1,6 +1,7 @@
 #include "Header.h"
 
 int main() {
+    system("chcp 1251");
     setlocale(LC_ALL, "RUS");
     Playlist playlist;
     playlist.total_number_of_tracks = 0;
