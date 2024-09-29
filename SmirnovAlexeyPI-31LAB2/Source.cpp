@@ -55,7 +55,16 @@ int main() {
                 printf("Нет треков в плейлисте\n");
             }
             break;
-
+        case 3:
+            if (playlist.total_number_of_tracks > 0) {
+                Pause pause;
+                pause.playlist = &playlist;
+                pause_song(&pause);
+            }
+            else {
+                printf("Нет треков в плейлисте\n");
+            }
+            break;
         }
     }
 	return 0;
