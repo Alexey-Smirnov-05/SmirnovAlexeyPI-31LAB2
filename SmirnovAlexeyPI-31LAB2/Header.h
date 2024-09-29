@@ -115,3 +115,18 @@ void change_volume(Volume* volume, int new_volume) {
         printf("Неверный диапазон громкости\n");
     }
 }
+
+// Функция для сохранения треков в файл
+void save_tracks_to_file(Playlist* playlist, const char* filename) {
+    FILE* file = fopen(filename, "w");
+    if (file == NULL) {
+        printf("Error opening file\n");
+        return;
+    }
+
+    for (int i = 0; i < playlist->total_number_of_tracks; i++) {
+        fprintf(file, "%s\n", playlist->tracks[i].title);
+    }
+
+    fclose(file);
+}
